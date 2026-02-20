@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Dharmasthala Manjunatheshwara College | Vijnana Sinchana 2K26</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --royal-dark:#1a0f08;
+    --royal-maroon:#3b0d0d;
+    --royal-gold:#FFD700;
+    --royal-saffron:#FF9933;
+    --glass:rgba(255,215,0,0.08);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family:'Playfair Display',serif;
+    background:var(--royal-dark);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* College Header */
+.college-header {
+    background: linear-gradient(135deg, var(--royal-maroon), var(--royal-dark));
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 3px solid var(--royal-gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.college-name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: var(--royal-gold);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.college-tagline {
+    font-size: 0.9rem;
+    color: #f5e6c8;
+    margin-top: 0.3rem;
+    letter-spacing: 1px;
+}
+
+/* Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+        url("img2.png");
+    background-size:cover;
+    background-position:center;
+    z-index:-1;
+}
+
+/* ---------------------------------------------------------------------------- */
+/* MOBILE FIRST - Default styles for phones (0px and up) */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    text-decoration: none;
+}
+
+/* Mobile default styles */
+.college-header {
+    padding: 0.8rem 1rem; /* Smaller padding on mobile */
+}
+
+.hero-meta {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 1.5rem;
+}
+
+.hero {
+    padding: 15px; /* Less padding on mobile */
+    margin-top: -80px;
+}
+
+.register-btn {
+    padding: 1.1rem 2.5rem; /* Smaller on mobile */
+    font-size: 1rem;
+}
+
+.insta-btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+}
+
+.grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+}
+
+.instructions-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.section {
+    padding: 4rem 1rem; /* Less padding on mobile */
+}
+
+/* TABLET & DESKTOP - Enhanced styles (768px and up) */
+@media (min-width: 768px) {
+    .college-header {
+        padding: 1rem 2rem;
+    }
+    
+    .hero-meta {
+        flex-direction: row;
+        gap: 3rem;
+    }
+    
+    .hero {
+        padding: 20px;
+        margin-top: -100px;
+    }
+    
+    .register-btn {
+        padding: 1.4rem 3.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .instructions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+    
+    .section {
+        padding: 6rem 2rem;
+    }
+    
+    .dev-profile {
+        gap: 1rem;
+    }
+    
+    .dev-circle {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* LARGE DESKTOP (1200px and up) */
+@media (min-width: 1200px) {
+    .section {
+        max-width: 1300px;
+        margin: auto;
+    }
+}
+/*---------------------------------------------------------------------*/
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    margin-top: -100px;
+}
+
+.hero-title{
+    font-family:'Cinzel',serif;
+    font-size:clamp(3rem,8vw,6rem);
+    letter-spacing:4px;
+    background:linear-gradient(45deg,var(--royal-gold),var(--royal-saffron),#fff3b0);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:glow 3s infinite alternate;
+}
+
+.hero-sub{
+    font-size:clamp(1.3rem,3vw,2rem);
+    margin-top:1rem;
+    color:var(--royal-gold);
+    letter-spacing:6px;
+}
+
+.hero-meta{
+    margin-top:3rem;
+    display:flex;
+    gap:3rem;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* Fix for white location link */
+.meta-item {
+    background:var(--glass);
+    padding:1.2rem 2rem;
+    border-radius:16px;
+    border:1px solid rgba(255,215,0,.4);
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    font-size:1.1rem;
+    color: white; /* Default white text for all meta items */
+    text-decoration: none;
+}
+
+.meta-item:hover{
+    cursor: pointer;
+}
+
+.meta-item i{ 
+    color:var(--royal-gold); 
+}
+
+/* Remove or comment out the old .location class since we're using inline styling now */
+
+
+.meta-item{
+    background:var(--glass);
+    padding:1.2rem 2rem;
+    border-radius:16px;
+    border:1px solid rgba(255,215,0,.4);
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    font-size:1.1rem;
+}
+.meta-item:hover{
+    cursor: pointer;
+}
+
+.meta-item i{ 
+    color:var(--royal-gold); 
+}
+
+.location{
+    color: white;
+    font-weight:500 ;
+}
+
+/* Countdown */
+#countdown{
+    margin-top:2rem;
+    font-size:1.5rem;
+    color:var(--royal-gold);
+}
+
+/* CREATIVE EVENT BUTTONS - ANCIENT SCROLL DESIGN */
+.register-btn{
+    margin-top:2rem;
+    display:inline-block;
+    position:relative;
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    font-size:1.1rem;
+    text-decoration:none;
+    color:#1a0f08;
+    padding:1.4rem 3.5rem;
+    background:linear-gradient(145deg, #f8e8a8 0%, var(--royal-gold) 30%, var(--royal-saffron) 70%, #e6b800 100%);
+    border-radius:25px 15px 25px 15px;
+    overflow:hidden;
+    transform:perspective(1000px) rotateX(5deg);
+    box-shadow: 
+        0 15px 35px rgba(255,215,0,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        inset 0 -1px 0 rgba(0,0,0,0.2);
+    transition:all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.register-btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-150%;
+    width:50%;
+    height:100%;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent);
+    transform:skewX(-25deg);
+    transition:left 0.7s;
+}
+
+.register-btn:hover::before{
+    left:150%;
+}
+
+.register-btn::after{
+    content:'';
+    position:absolute;
+    top:8px;
+    right:-8px;
+    width:20px;
+    height:20px;
+    background:radial-gradient(circle, rgba(139,69,19,0.9) 0%, transparent 70%);
+    border-radius:50% 0 50% 0;
+    transform:rotate(45deg) skew(10deg);
+    box-shadow:4px -4px 8px rgba(0,0,0,0.3);
+    transition:all 0.4s ease;
+}
+
+.register-btn:hover::after{
+    transform:rotate(45deg) skew(10deg) translateX(5px);
+    box-shadow:6px -6px 12px rgba(0,0,0,0.4);
+}
+
+/* Wax seal effect */
+.register-btn .wax-seal{
+    position:absolute;
+    bottom:-10px;
+    right:-10px;
+    width:35px;
+    height:35px;
+    background:radial-gradient(circle at 30% 30%, #c41e3a 0%, #8b0000 50%, #660000 100%);
+    border-radius:50%;
+    transform:rotate(-15deg) scale(1);
+    transition:all 0.5s ease;
+    box-shadow:0 4px 12px rgba(139,0,0,0.5);
+}
+
+.register-btn .wax-seal::before{
+    content:'✦';
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:12px;
+    color:#ffd700;
+}
+
+.register-btn:hover .wax-seal{
+    transform:rotate(-15deg) scale(1.1) translate(3px,-3px);
+}
+
+/* Sections */
+.section{
+    padding:6rem 2rem;
+    max-width:1300px;
+    margin:auto;
+}
+
+.section h2{
+    text-align:center;
+    font-family:'Cinzel',serif;
+    font-size:3rem;
+    margin-bottom:3rem;
+    color:var(--royal-gold);
+}
+
+/* About */
+.about-text{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    font-size:1.2rem;
+    color:#f5e6c8;
+}
+
+/* Cards - FIXED SYMBOLS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:2rem;
+}
+
+.card{
+    position:relative;
+    padding:3rem 2rem;
+    border-radius:20px;
+    text-align:center;
+    overflow:hidden;
+    border:1px solid rgba(255,215,0,.3);
+    transition:.6s;
+    background-size:cover;
+    background-position:center;
+}
+
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.85));
+}
+
+.card *{
+    position:relative;
+    z-index:1;
+}
+
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 25px 60px rgba(0,0,0,.8);
+    border-color:var(--royal-gold);
+}
+
+.card i{
+    font-size:3rem;
+    margin-bottom:1rem;
+    color:var(--royal-gold);
+}
+
+.card h3{
+    font-family:'Cinzel',serif;
+    margin-bottom:.5rem;
+}
+
+.cardbio{
+    text-decoration: none;
+    color: white;
+    width: 400px;
+}
+
+/* GENERAL INSTRUCTIONS SECTION */
+.instructions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.instruction-card {
+    background: linear-gradient(145deg, rgba(255,215,0,0.1), rgba(59,13,13,0.3));
+    border: 2px solid rgba(255,215,0,0.4);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.instruction-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--royal-gold), var(--royal-saffron));
+}
+
+.instruction-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(255,215,0,0.2);
+    border-color: var(--royal-gold);
+}
+
+.instruction-icon {
+    font-size: 2.5rem;
+    color: var(--royal-gold);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.instruction-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--royal-gold);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.instruction-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f5e6c8;
+}
+
+/* SIMPLE DEVELOPER FOOTER - FINAL FOOTER */
+.dev-footer {
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid rgba(255,215,0,0.3);
+}
+
+.dev-profile {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto 1rem;
+}
+
+.dev-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--royal-gold);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.dev-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dev-info h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--royal-gold);
+    margin: 0 0 0.2rem 0;
+}
+
+.dev-info .college {
+    font-size: 0.9rem;
+    color: var(--royal-saffron);
+}
+
+.event-credit {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+@keyframes glow{
+    from{filter:drop-shadow(0 0 15px rgba(255,215,0,.5))}
+    to{filter:drop-shadow(0 0 40px rgba(255,153,51,.9))}
+}
+
+@media(max-width:768px){
+    .hero-meta{flex-direction:column;gap:1.5rem}
+    .dev-profile {gap: 0.8rem;}
+    .dev-circle {width: 50px; height: 50px;}
+    .college-header {padding: 0.8rem 1rem;}
+    .instructions-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<!-- College Header Added at Start -->
+<header class="college-header">
+    <div class="college-name">
+        Sri Dharmasthala Manjunatheshwara College (Autonomous), Ujire
+    </div>
+    <div class="college-tagline">
+        Re-accredited A++ Grade by NAAC | D.K., Karnataka State-574240
+    </div>
+</header>
+
+<section class="hero">
+    <h1 class="hero-title">VIJNANA SINCHANA</h1>
+    <div class="hero-sub">FEST 2K26</div>
+
+    <div class="hero-meta">
+    <div class="meta-item">
+        <i class="fas fa-calendar-alt"></i>
+        28th February 2026
+    </div>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Sri+Dharmasthala+Manjunatheshwara+College%2C+Ujire" 
+    class="meta-item location-link">
+        <i class="fas fa-map-marker-alt"></i>
+        SDM College, Ujire
+    </a>
+    </div>
+
+
+    <div id="countdown"></div>
+
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfiXLIwwvrQ53oZKq0ZO5JnEgHnBU5ity4CcevuBCQ20skgdg/viewform" 
+    class="register-btn">
+        <span>Register Now</span>
+        <span class="wax-seal"></span>
+    </a>
+</section>
+
+<section class="section">
+    <h2>About The Fest</h2>
+    <p class="about-text">
+        Vijnana Sinchana 2K26 celebrates scientific excellence rooted in the Indian Knowledge System,
+        integrating ancient wisdom with modern innovation across multiple disciplines.
+    </p>
+</section>
+
+<section class="section">
+    <h2>Indian Knowledge System Events</h2>
+
+    <div class="grid">
+        <a href="biotechnology.html" class="cardbio">
+            <div class="card" style="background-image:url('bio.png');">
+                <i class="fas fa-dna"></i>
+                <h2>Bio Sutra</h2>
+                <h3>Biotechnology</h3>
+                <p>B in Biotechnology stands for Bafflin</p>
+            </div>
+        </a>
+
+        <a href="botany.html" class="cardbio">
+            <div class="card" style="background-image:url('bot.png');">
+                <i class="fas fa-seedling"></i>
+                <h2>Vana Gupti</h2>
+                <h3>Botany</h3>
+                <p>One Tree. Three Clues. Zero Excuses</p>
+            </div>
+        </a>
+
+        <a href="physics.html" class="cardbio">
+            <div class="card" style="background-image:url('phy.png');">
+                <i class="fas fa-atom"></i>
+                <h2>Physi Vyuha</h2>
+                <h3>Physics</h3>
+                <p>A classical blend of physics and fun quest</p>
+            </div>
+        </a>
+
+        <a href="chemistry.html" class="cardbio">
+            <div class="card" style="background-image:url('che.png');">
+                <i class="fas fa-flask"></i>
+                <h2>Thathv<br>Anveshanam</h2>
+                <h3>Chemistry</h3>
+                <p>From Crystal Clues to Criminal Truth     
+                    <br>
+                </p>
+            </div>
+        </a>
+
+        <a href="mathematics.html" class="cardbio">
+            <div class="card" style="background-image:url('math.png');">
+                <i class="fas fa-calculator"></i>
+                <h2>Sankhya Sangramah</h2>
+                <h3>Mathematics</h3>
+                <p>From Shunya to the Stars</p>
+            </div>
+        </a>
+
+        <a href="psychology.html" class="cardbio">
+            <div class="card" style="background-image:url('psy.jpeg');">
+                <i class="fas fa-brain"></i>
+                <h2>Chitta Anveshana</h2>
+                <h3>Psychology</h3>
+                <p>Every mind matters</p>
+            </div>
+        </a>
+
+        <a href="statistics.html" class="cardbio">
+            <div class="card" style="background-image:url('st.jpeg');">
+                <i class="fas fa-chart-line"></i>
+                <h2>Jnana Sankhya</h2>
+                <h3>Statistics</h3>
+                <p>Statistics through insight and logic</p>
+            </div>
+        </a>
+
+        <a href="fashion.html" class="cardbio">
+            <div class="card" style="background-image:url('vastra.jpeg');">
+                <i class="fas fa-child"></i>
+                <h2>Vastra Vedam</h2>
+                <h3>Fashion Show</h3>
+                <p>Thread's of Culture, Steps of Confidence</p>
+            </div>
+        </a>
+
+        <a href="documentry.html" class="cardbio">
+            <div class="card" style="background-image:url('drishya.jpeg');">
+                <i class="fas fa-video"></i>
+                <h2>Drishya Veda</h2>
+                <h3>Documentary</h3>
+                <p>Where Wisdom Comes Alive Through The Lens</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+<!-- NEW GENERAL INSTRUCTIONS SECTION -->
+<section class="section">
+    <h2>General Instructions</h2>
+    <h4>All the participant must follow the rules of Vignana Sinchana .</h4>
+    <div class="instructions-grid">
+        <div class="instruction-card">
+            <i class="fas fa-info-circle instruction-icon"></i>
+            <div class="instruction-title">Registration</div>
+            <div class="instruction-text">
+                1 Reporting time is 8:45 AM for verification and briefing.<br>
+                2 Registration is required for all events .<br>
+                3 Registration fee is 250 per college . <br>
+                4 Last date to registration 25-02-2026 .<br>
+                5 Each participant can participate only in one event.
+            </div>
+        </div>
+        
+        <div class="instruction-card">
+            <i class="fas fa-clock instruction-icon"></i>
+            <div class="instruction-title">Event Rules</div>
+            <div class="instruction-text">
+                1 Open only to Undergraduate science students.<br>
+                2 Each participant can participate only in one event.<br>
+                3 Teams must participate in all events to compete for  the Overall Championship.
+            </div>
+        </div>
+        
+        <div class="instruction-card">
+            <i class="fas fa-id-card instruction-icon"></i>
+            <div class="instruction-title">Valid ID Required</div>
+            <div class="instruction-text">
+                • Students must carry :<br>
+                   1. Valid College ID .<br>
+                   2. Signed Permission Letter .
+            </div>
+        </div>
+        
+        <div class="instruction-card">
+            <i class="fas fa-ban instruction-icon"></i>
+            <div class="instruction-title">Prohibited Items</div>
+            <div class="instruction-text">
+                1. Any vulgarity, misconduct, or unfair means leads to disqualification.<br>
+                2. Participants are responsible for their own belongings.<br>
+                3. Organizers are not responsible for loss or damage.
+            </div>
+        </div>
+        
+        <div class="instruction-card">
+            <i class="fas fa-hands-helping instruction-icon"></i>
+            <div class="instruction-title">Queries</div>
+            <div class="instruction-text">
+                1 For event-related queries, contact the respective coordinators.<br>
+                2 Accommodation is available upon prior request for distant participants.
+            </div>
+        </div>
+    
+    </div><br><br>
+    <h2>“Echoes of the Past, Experiments of the Future We Welcome You to Vijnana Sinchana.”</h2>
+</section>
+
+<footer class="dev-footer">
+    <div class="dev-profile">
+        <div class="dev-circle">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face" alt="Developer">
+        </div>
+        <div class="dev-info">
+            <h4>MANJUNATH H  III B.Sc 230313</h4>
+            
+        </div>
+    </div>
+    <div class="event-credit">
+        © 2026 Vijnana Sinchana | Sri Dharmasthala Manjunatheshwara College, Ujire | Designed with ❤️
+    </div>
+</footer>
+
+<script>
+const eventDate = new Date("Feb 28, 2026 09:00:00").getTime();
+const x = setInterval(function(){
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
+
+  document.getElementById("countdown").innerHTML =
+  days + " Days | " + hours + " Hours | " + minutes + " Minutes | " + seconds + " Seconds";
+
+  if(distance < 0){
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "Event Started";
+  }
+},1000);
+</script>
+
+</body>
+</html>
